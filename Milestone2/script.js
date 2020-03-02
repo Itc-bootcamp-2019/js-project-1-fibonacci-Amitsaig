@@ -1,2 +1,2 @@
-document.getElementById('x').innerText = "X"
-document.getElementById('y').innerText = "Y"
+document.getElementById('x').innerText = "7"
+document.getElementById('y').innerText = "13"
