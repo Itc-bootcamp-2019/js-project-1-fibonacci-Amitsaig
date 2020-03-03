@@ -1,4 +1,3 @@
-
 function fibo(x) {
 	let first = 0;
 	let second = 1;
@@ -9,10 +8,9 @@ function fibo(x) {
 		first = second;
 		second = y;
 	}
-	return y;
-		
+	return y;	
 }
-
+// http://localhost:5050/fibonacci/:number] number=input from the user
 function changer() {
 	let inputnum = document.getElementById('func').value;
 	let y = fibo(inputnum);
