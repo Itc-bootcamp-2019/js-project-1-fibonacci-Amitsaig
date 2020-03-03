@@ -8,51 +8,63 @@ h1 {}
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: #DEDEDE
+    background-color: white;
 }
 
 .row {
     display: flex;
-
-
 }
 
 .box {
-    margin-right: 10px;
-    margin-top: 10px;
     background-color: white;
-    height: 500px;
-    width: 500px;
+    height: 100%;
+    width: 100%;
 }
 
-.row1 {}
-
 .fib {
-    position: relative;
-    left: 64px;
-    top: 20px;
+    position: absolute;
+    width: 672px;
+    height: 79px;
+    left: 100px;
+    top: 30px;
     font-family: Open Sans;
     font-style: normal;
     font-weight: normal;
-    font-size: 35px;
+    font-size: 72px;
+    line-height: 79px;
 }
 
 .function {
-	position: relative;
-    left: 64px;
-    top: 10px;
+    display: flex;
+    position: absolute;
+    width: 450px;
+    height: 24px;
+    left: 55px;
+    top: 156px;
     font-family: Open Sans;
-    font-size: 15px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 24px;
+    margin: 50px;
 }
 
 button {
-	background: #0275D8;
-	border: none;
-	color: white;
-	width: 25px;
-
+    margin-left: 10px; 
+    margin-right: 10px;
+    background: #0275D8;
+    color: white;
+    border: 1px solid #0275D8;
+    box-sizing: border-box;
+    border-radius: 4px;
 }
 
-.func {
-	width: 30px;
+#func {
+    margin-left: 20px;
+    width: 86px;
+    height: 24px;
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    box-sizing: border-box;
+    border-radius: 4px;
 }
