@@ -1,3 +1,9 @@
+let scroll = document.getElementById("topBtn");
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
 function showSpinner() {
     spinner.className = "show";
     setTimeout(() => {
@@ -45,22 +51,27 @@ function changer() {
         .then((data) => {;
             document.getElementById('yFibonacci').innerText = data.result;
             document.getElementById('yFibonacci').style.visibility = 'visible';
+            function createNew() {
+            	let resultsList = document.getElementById('resultsList');
+  				let newResult = document.createElement('div');
+    			let date = new Date(data.createdDate);
+				resultsList.appendChild(newResult);
+				newResult.classList.add('append-class')
+				newResult.innerHTML += 'The Fibonacci of ' + data.number 
+				+ ' is ' + data.result + ' Calculated at: ' 
+				+ date.toUTCString() + '  <br>' ;
+            }
+            createNew();
         });
-        function createNew() {
-        	
-        }
 }
-
 document.getElementById("myBtn").addEventListener("click", checker);
-
-
 
 window.onload = function resultList() {
 	fetch('http://localhost:5050/getFibonacciResults').then((response) => {
     return response.json();
   	})
   		.then((data) => {
-  			console.log(data.results[0])
+  			/*console.log(data.results[0])*/
   			let resultsList = document.getElementById('resultsList');
     		function listOfResults() {
 			for (i = 0; i < data.results.length; i++ ) {
