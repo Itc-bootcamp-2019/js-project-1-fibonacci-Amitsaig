@@ -1,9 +1,9 @@
 /*const spinner = document.getElementById("spinner");
 let bigError = document.getElementById('xFibonacci');
 let hideError = document.getElementById('errorBox');
-let hiddenY = document.getElementById('yFibonacci');
 let hide42 = document.getElementById('newError42')*/
-/*target.classList.toggle("done");*/
+/*hiddenY.classList.toggle("hidden");*/
+let hiddenY = document.getElementById('yFibonacci');
 
 function showSpinner() {
     spinner.className = "show";
@@ -13,16 +13,24 @@ function showSpinner() {
 }
 
 function defaultBox() {
+	const errorBox = document.getElementById('errorBox')
+	const xFibonacci = document.getElementById('xFibonacci')
+
 	document.getElementById('errorBox').style.visibility = 'hidden';
-	document.getElementById('xFibonacci').style.color = 'black';
-	document.getElementById('xFibonacci').style.border = '1px solid #CCCCCC';
+	xFibonacci.classList.remove("red-xFibonacci")
 }
+
 
 function error() {
 	document.getElementById('errorBox').style.visibility = 'visible';
 	document.getElementById('newError42').style.visibility = 'hidden';
-	document.getElementById('xFibonacci').style.color = '#D9534F';
-	document.getElementById('xFibonacci').style.border = '1px solid #FD1F1F';
+
+	const xFibonacci = document.getElementById('xFibonacci')
+	xFibonacci.classList.add("red-xFibonacci")
+
+
+	// document.getElementById('xFibonacci').style.color = '#D9534F';
+	// document.getElementById('xFibonacci').style.border = '1px solid #FD1F1F';
 	hideY();
 }
 
