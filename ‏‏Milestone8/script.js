@@ -1,7 +1,11 @@
 let scroll = document.getElementById("topBtn");
 let sorting = document.getElementById('sortList');
+let searchBox = document.getElementById('xFibonacci')
+let answer = document.getElementById('yFibonacci');
+let mistake = document.getElementById('errorBox');
+let error42 = document.getElementById('newError42');
 
-
+//xFibonacci.classList.remove("red-xFibonacci")
 //sort list of results
 sorting.onchange = function() {sortBy()};
 /*function() {sortBy()};*/
@@ -31,16 +35,23 @@ function showSpinner() {
 }
 // style changing functions
 function defaultBox() {
-	document.getElementById('errorBox').style.visibility = 'hidden';
-	document.getElementById('xFibonacci').style.color = 'black';
-	document.getElementById('xFibonacci').style.border = '1px solid #CCCCCC';
+/*	document.getElementById('errorBox').style.visibility = 'hidden';*/
+	mistake.classList.add('hidden-error');
+	mistake.classList.remove('errorBox');
+	searchBox.classList.add('xFibonacci');
+	searchBox.classList.remove('red-box');
 }
 function error() {
-	document.getElementById('errorBox').style.visibility = 'visible';
-	document.getElementById('newError42').style.visibility = 'hidden';
-	document.getElementById('xFibonacci').style.color = '#D9534F';
-	document.getElementById('xFibonacci').style.border = '1px solid #FD1F1F';
-	document.getElementById('yFibonacci').style.visibility = 'hidden';
+	/*document.getElementById('errorBox').style.visibility = 'visible';*/
+	mistake.classList.add('errorBox');
+	mistake.classList.remove('hidden-error');
+	error42.classList.remove('pop-error');
+	error42.classList.add('newError42');
+	/*document.getElementById('newError42').style.visibility = 'hidden';*/
+	searchBox.classList.remove('xFibonacci');
+	searchBox.classList.add('red-box');
+	/*document.getElementById('yFibonacci').style.visibility = 'hidden';*/
+	answer.classList.add('answer')
 }
 
 //checking input number
@@ -51,8 +62,9 @@ function checker() {
 		changer();
 	} else if (num == 42) {
 		defaultBox()
-		document.getElementById('newError42').style.visibility = 'visible';
-		document.getElementById('yFibonacci').style.visibility = 'hidden';
+		error42.classList.add('pop-error');
+		error42.classList.remove('newError42');
+		answer.classList.add('answer')
 	} else {
 		return error();
 	}
@@ -61,15 +73,17 @@ function checker() {
 // function + result
 function changer() {
 	showSpinner()
-	document.getElementById('yFibonacci').style.visibility = 'hidden';
-	document.getElementById('newError42').style.visibility = 'hidden'
+	answer.classList.add('answer')
+	error42.classList.remove('pop-error');
+	error42.classList.add('newError42');
     let number = document.getElementById('xFibonacci').value;
     let y = fetch('http://localhost:5050/fibonacci/' + number).then(response => {
             return response.json();
         })
         .then((data) => {;
             document.getElementById('yFibonacci').innerText = data.result;
-            document.getElementById('yFibonacci').style.visibility = 'visible';
+            answer.classList.remove('answer')
+            answer.classList.add('yFibonacci')
             function createNew() {
             	let resultsList = document.getElementById('resultsList');
   				let newResult = document.createElement('div');
