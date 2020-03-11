@@ -76,7 +76,7 @@ function changer() {
     			let date = new Date(data.createdDate);
 				resultsList.appendChild(newResult);
 				newResult.classList.add('append-class')
-				newResult.innerHTML += 'The Fibonacci of ' + data.number 
+				newResult.innerHTML += 'The Fibonacci Of ' + data.number 
 				+ ' is ' + data.result + ' Calculated at: ' 
 				+ date.toString() + '  <br>' ;
             }
@@ -99,23 +99,19 @@ function resultList() {
 			//loop through the value function
 		/*	data.results.sort(function(a, b) {
 			return (b.createdDate - a.createdDate);})*/
-			if (sorting.value == 1) {
-				console.log('hey1') 
+			if (sorting.value == 1) {				
 				data.results.sort(function(a, b) {
 				return (a.number - b.number);})	
 
 			} else if (sorting.value == 2) {
-				console.log('hey2')
 				data.results.sort(function(a, b) {
 				return (b.number - a.number);})
 
 			} else if (sorting.value == 3) {
-				console.log('hey3')
 				data.results.sort(function(a, b) {
 				return (a.createdDate - b.createdDate);})
 
 			} else if (sorting.value == 4) {
-				console.log('hey4')
 				data.results.sort(function(a, b) {
 				return (b.createdDate - a.createdDate);}) 
 			}
@@ -126,7 +122,7 @@ function resultList() {
     			let date = new Date(data.results[i].createdDate);
 				resultsList.appendChild(newResult);
 				newResult.classList.add('append-class')
-				newResult.innerHTML += 'The Fibonacci of ' + data.results[i].number 
+				newResult.innerHTML += 'The Fibonacci Of ' + data.results[i].number 
 				+ ' is ' + data.results[i].result + ' Calculated at: ' 
 				+ date.toString() + '  <br>' ;		
 			}
@@ -141,7 +137,6 @@ async function checkBox() {
  	if (saving.checked == true){
  		checker();
  	} else {
- 		console.log('ok');
  		manualChanger();
  	}
  }

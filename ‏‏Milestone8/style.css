@@ -4,6 +4,16 @@ body {
 
 h1 {}
 
+button {
+    margin-left: 10px;
+    margin-right: 10px;
+    background: #0275D8;
+    color: white;
+    border: 1px solid #0275D8;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -11,17 +21,17 @@ h1 {}
     background-color: white;
 }
 
-.classRow {
+.class-row {
     display: flex;
 }
 
-.classBox {
+.class-box {
     background-color: white;
     height: 100%;
     width: 100%;
 }
 
-.fiboHeader {
+.fibo-header {
     position: absolute;
     width: 672px;
     height: 79px;
@@ -40,7 +50,7 @@ h1 {}
     text-decoration: underline;
 }
 
-.fiboFunction {
+.fibo-function {
     display: flex;
     position: absolute;
     width: 450px;
@@ -55,19 +65,11 @@ h1 {}
     margin: 50px;
 }
 
-button {
-    margin-left: 10px;
-    margin-right: 10px;
-    background: #0275D8;
-    color: white;
-    border: 1px solid #0275D8;
-    box-sizing: border-box;
-    border-radius: 4px;
-}
+
 
 #xFibonacci {
     margin-left: 20px;
-    width: 86px;
+    width: 60px;
     height: 24px;
     background: #FFFFFF;
     border: 1px solid #CCCCCC;
@@ -137,7 +139,7 @@ button {
     top: 191px;
 }
 
-.resultsList {
+.results-list {
     font-family: Open Sans;
     font-style: normal;
     font-weight: normal;
@@ -160,7 +162,7 @@ button {
     line-height: 72px;
 }
 
-.resultsHeader {
+.results-header {
     position: absolute;
     top: 250px;
     left: 100px;
@@ -171,7 +173,7 @@ button {
     
 }
 
-.saveBox {
+.save-box {
     display: flex;
     position: absolute;
     top: 250px;
