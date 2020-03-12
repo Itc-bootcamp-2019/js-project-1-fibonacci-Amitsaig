@@ -90,9 +90,9 @@ function changer() {
     			let date = new Date(data.createdDate);
 				resultsList.appendChild(newResult);
 				newResult.classList.add('append-class')
-				newResult.innerHTML += 'The Fibonacci Of ' + data.number 
-				+ ' is ' + data.result + ' Calculated at: ' 
-				+ date.toString() + '  <br>' ;
+				newResult.innerHTML += 'The Fibonacci Of <span>' + data.number 
+				+ '</span> is <span>' + data.result + '</span>Calculated at: ' 
+				+ date.toString() + '  ' ;
             }
             createNew();
         });
@@ -135,9 +135,11 @@ function resultList() {
   			let newResult = document.createElement('div');
     			let date = new Date(data.results[i].createdDate);
 				resultsList.appendChild(newResult);
-				newResult.classList.add('append-class')
-				newResult.innerHTML += 'The Fibonacci Of ' + data.results[i].number 
-				+ ' is ' + data.results[i].result + ' Calculated at: ' 
+				newResult.classList.add('append-class');
+				/*let xData = (data.results[i].result)
+				xData.classList.add('answer');*/
+				newResult.innerHTML += 'The Fibonacci Of <span>' + data.results[i].number 
+				+ '</span> is <span>' + data.results[i].result + '</span> Calculated at: ' 
 				+ date.toString() + '  <br>' ;		
 			}
 }
